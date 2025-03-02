@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screamer</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: black;
+            margin: 0;
+        }
+        button {
+            font-size: 24px;
+            padding: 20px;
+            cursor: pointer;
+            border: none;
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <button id="soundButton">Нажми на меня</button>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const button = document.getElementById("soundButton");
+            const audio = new Audio("sounds/asd.mp3"); // Файл должен быть в папке "sounds"
+
+            button.addEventListener("click", () => {
+                audio.currentTime = 0; // Позволяет повторно запускать звук
+                audio.play().catch(error => console.error("Ошибка воспроизведения:", error));
+            });
+        });
+    </script>
+</body>
+</html>
