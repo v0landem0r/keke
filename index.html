@@ -9,6 +9,7 @@
             margin: 0;
             padding: 0;
             overflow: hidden;
+            box-sizing: border-box;
         }
         body {
             display: flex;
@@ -19,9 +20,15 @@
         }
         img {
             width: 80vw;
-            height: 100vh;
+            height: 80vh;
             object-fit: cover;
             cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            img {
+                width: 90vw;
+                height: 90vh;
+            }
         }
     </style>
 </head>
